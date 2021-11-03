@@ -1,0 +1,136 @@
+@media screen and (min-width: 414px) {
+  .shop {
+    width: 100%;
+  }
+
+  .overflowX {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .shop ul {
+    width: 500%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    overflow-x: hidden;
+  }
+
+  .shop li {
+    width: 300px;
+    height: 346px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px;
+
+    margin: 20px;
+  }
+
+  .shop__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+
+  .shop__img img {
+    width: 100px;
+    height: 100px;
+    transform: scale(1.5);
+  }
+
+  .shop li h2 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--gray-100);
+  }
+
+  .shop li p:nth-of-type(1) {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    /* grey-300 */
+
+    color: var(--grey-50);
+  }
+
+  .shop__price {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: var(--Color-primary);
+  }
+
+  .shop__btn {
+    width: 106px;
+    height: 40px;
+
+    background: var(--Color-primary);
+
+    border: 2px solid var(--Color-primary);
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    color: var(--grey-0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* MAIN */
+  .shop ul {
+    width: 200%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* MAIN */
+  .shop {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /* MAIN */
+  .overflowX {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .shop ul {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .shop {
+    width: 70%;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .shop ul {
+    justify-content: center;
+  }
+
+  aside {
+    margin-top: 17px;
+  }
+}

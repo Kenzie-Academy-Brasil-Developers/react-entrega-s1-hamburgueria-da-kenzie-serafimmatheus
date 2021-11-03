@@ -1,38 +1,258 @@
-.App {
-  text-align: center;
+:root {
+  /* Primary Palette */
+  --Color-primary: #27ae60;
+  --Color-primary-50: #93d7af;
+  --Color-secondary: #eb5757;
+
+  /* Grey Scale Palette */
+
+  --gray-100: #333333;
+  --grey-50: #828282;
+  --grey-20: #e0e0e0;
+  --grey-0: #f5f5f5;
+
+  /* Feedback Palette */
+  --Negative: #e60000;
+  --Warning: #ffcd07;
+  --Sucess: #168821;
+  --Information: #155bcb;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width: 414px) {
+  /* ----- HEADER ----- */
+  header {
+    background-color: var(--grey-20);
+  }
+  header > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 80px;
+  }
+
+  header .box-logo h1 {
+    font-size: 36px;
+
+    background: -webkit-linear-gradient(90deg, #333333 62.64%, #eb5757 64.74%);
+    background: linear-gradient(90deg, #333333 62.64%, #eb5757 64.74%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 15px;
+  }
+
+  header .box-input {
+    display: flex;
+    position: relative;
+  }
+
+  header .box-input input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px 0px 15px;
+
+    width: 365px;
+    height: 60px;
+
+    background: #ffffff;
+
+    border: 2px solid var(--gray-100);
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+
+  header .box-input button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    width: 107px;
+    height: 40px;
+
+    background: var(--Color-primary);
+
+    border: 2px solid var(--Color-primary);
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    color: var(--grey-0);
+  }
+
+  /* ----- MAIN ----- */
+
+  main > .container {
+    display: flex;
+    padding: 40px 0;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aside__title {
+    /* width: 30%; */
+    width: 365px;
+    height: 65px;
+
+    background: var(--Color-primary);
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .aside__title h2 {
+    padding: 22px 20px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #ffffff;
+  }
+
+  /* ----- CARRINHO ----- */
+
+  .teste {
+    display: flex;
+  }
+  .box-carrinho {
+    display: flex;
+    flex-direction: column;
+
+    width: 365px;
+    min-height: 158px;
+
+    background: var(--grey-20);
+    border-radius: 0px 0px 5px 5px;
+  }
+
+  .box-carrinho li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 0;
+
+    border-bottom: 1px solid #ccc;
+  }
+
+  .shop__img__carrinho {
+    width: 70px;
+    height: 70px;
+  }
+
+  .shop__img__carrinho img {
+    width: 100%;
+  }
+
+  .shop__btn__carrinho {
+    border: none;
+    cursor: pointer;
+  }
+
+  .shop__title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shop__resultado {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .shop__resultado span {
+    color: var(--grey-50);
+  }
+
+  .box-carrinho_vazia {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 365px;
+    height: 158px;
+
+    background: var(--grey-20);
+    border-radius: 0px 0px 5px 5px;
+  }
+
+  .box-carrinho__style {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box-carrinho__style h2 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+
+    text-align: center;
+
+    color: #333333;
+  }
+
+  .box-carrinho__style p {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    /* identical to box height, or 171% */
+    line-height: 24px;
+
+    text-align: center;
+
+    /* grey-300 */
+
+    color: var(--grey-50);
+  }
+
+  .box-carrinho__value {
+    display: flex;
+    margin-top: 30px;
+
+    border-top: 1px solid var(--gray-100);
+
+    justify-content: space-between;
+
+    padding: 20px 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@media screen and (min-width: 1024px) {
+  /* HEADER */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  header > .container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 1440px) {
+  /* MAIN */
+  main > .container {
+    flex-direction: row;
+    justify-content: start;
+    align-items: self-start;
   }
 }
