@@ -51,7 +51,7 @@ function App() {
 
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
+  // const [cartTotal, setCartTotal] = useState(0);
   const [nameFilter, setNameFilter] = useState("");
   const [isTrue, setIsTrue] = useState(false);
   const [isCarrinho, setIsCarrinho] = useState(false);
@@ -89,7 +89,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      <header className="header">
         <div className="container">
           <div className="box-logo">
             <h1>
@@ -99,6 +99,7 @@ function App() {
 
           <div className="box-input">
             <input
+              placeholder="Clique em Pesquisar"
               value={nameFilter}
               onChange={(event) => setNameFilter(event.target.value)}
             />
