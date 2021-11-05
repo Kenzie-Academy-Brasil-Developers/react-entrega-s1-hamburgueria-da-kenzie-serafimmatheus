@@ -1,5 +1,6 @@
 import { MenuContainer } from "./Components/MenuContainer";
 import { useState } from "react";
+import { Button } from "./Components/Button";
 import "./App.css";
 import "./reset.css";
 
@@ -53,16 +54,18 @@ function App() {
   const [currentSale, setCurrentSale] = useState([]);
   // const [cartTotal, setCartTotal] = useState(0);
   const [nameFilter, setNameFilter] = useState("");
-  const [isTrue, setIsTrue] = useState(false);
+  const [isTrue, setIsTrue] = useState(true);
   const [isCarrinho, setIsCarrinho] = useState(false);
 
   const filterSrc = () => {
     setIsTrue(!isTrue);
     const newArrProdutos = products.filter(
-      (filt) => filt.category === nameFilter || filt.name === nameFilter
+      (filt) =>
+        nameFilter.includes(filt.category) || nameFilter.includes(filt.name)
     );
 
     setFilteredProducts(newArrProdutos);
+    // setNameFilter("", [...nameFilter]);
   };
 
   const addCarrinho = (event) => {
@@ -99,9 +102,10 @@ function App() {
 
           <div className="box-input">
             <input
-              placeholder="Clique em Pesquisar"
+              placeholder="Clique em Pesquisar para voltar"
               value={nameFilter}
               onChange={(event) => setNameFilter(event.target.value)}
+              //
             />
             <button onClick={filterSrc}>Pesquisar</button>
           </div>
@@ -111,7 +115,11 @@ function App() {
       <main>
         <div className="container">
           <section className="shop">
-            {nameFilter ? (
+            {isTrue ? (
+              <MenuContainer products={products} onClick={addCarrinho}>
+                Comprar
+              </MenuContainer>
+            ) : (
               <>
                 <h2 className="shop__resultado">
                   Resultado para <span>{nameFilter}</span>
@@ -123,10 +131,6 @@ function App() {
                   Comprar
                 </MenuContainer>
               </>
-            ) : (
-              <MenuContainer products={products} onClick={addCarrinho}>
-                Comprar
-              </MenuContainer>
             )}
           </section>
 
@@ -181,9 +185,8 @@ function App() {
                       .toFixed(2)
                       .replace(".", ",")}
                   </span>
+                  <Button onClick={removeAll}>Remover todos</Button>
                 </div>
-
-                <button onClick={removeAll}>Remover todos</button>
               </>
             )}
           </aside>

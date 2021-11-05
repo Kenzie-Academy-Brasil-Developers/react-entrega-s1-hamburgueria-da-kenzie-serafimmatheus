@@ -1,0 +1,20 @@
+.btn-removeAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 8px;
+
+  height: 30px;
+  background-color: var(--Color-primary);
+  color: var(--grey-0);
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.btn-removeAll:active {
+  transform: translateY(5px);
+  background-color: var(--Color-primary-50);
+}

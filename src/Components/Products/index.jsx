@@ -1,3 +1,4 @@
+import { Button } from "../Button";
 export const Products = ({ children, products, onClick }) => {
   return (
     <>
