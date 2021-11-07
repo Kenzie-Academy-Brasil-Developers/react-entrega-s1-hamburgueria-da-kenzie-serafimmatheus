@@ -52,20 +52,22 @@ function App() {
 
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
-  // const [cartTotal, setCartTotal] = useState(0);
   const [nameFilter, setNameFilter] = useState("");
   const [isTrue, setIsTrue] = useState(true);
   const [isCarrinho, setIsCarrinho] = useState(false);
 
   const filterSrc = () => {
-    setIsTrue(!isTrue);
-    const newArrProdutos = products.filter(
-      (filt) =>
-        nameFilter.includes(filt.category) || nameFilter.includes(filt.name)
-    );
+    if (nameFilter === "") {
+      setIsTrue(true);
+    } else {
+      nameFilter.toLocaleLowerCase();
+      setIsTrue(!isTrue);
+      const newArrProdutos = products.filter((filt) =>
+        filt.name.toLocaleLowerCase().startsWith(nameFilter)
+      );
 
-    setFilteredProducts(newArrProdutos);
-    // setNameFilter("", [...nameFilter]);
+      setFilteredProducts(newArrProdutos);
+    }
   };
 
   const addCarrinho = (event) => {
@@ -76,8 +78,11 @@ function App() {
       (carrinho) => carrinho.id === parseInt(idcarrinho)
     );
 
-    setCurrentSale([...currentSale, novoItemCarrinho]);
-    // setCartTotal(cartTotal + novoItemCarrinho.map((elem) => elem.price));
+    if (currentSale.find((elem) => elem.id === novoItemCarrinho.id)) {
+      return window.alert("Item já adicionado");
+    } else {
+      setCurrentSale([...currentSale, novoItemCarrinho]);
+    }
   };
 
   const removeCarrinho = (evt) => {
